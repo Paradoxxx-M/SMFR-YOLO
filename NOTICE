@@ -1,0 +1,15 @@
+SMFR-YOLO contains modifications and extensions based on THU-MIG/yolov10:
+https://github.com/THU-MIG/yolov10
+
+Exact upstream revision: 453c6e38a51e9d1d5a2aa5fb7f1014a711913397
+Upstream license: AGPL-3.0
+
+The DeepStream parser source retains its NVIDIA license notice and attribution
+to the DeepStream-Yolo implementation from which it was derived.
+DeepStream-Yolo source: https://github.com/marcoslucianops/DeepStream-Yolo
+Pinned DeepStream-Yolo revision: 2894babce8e75c49115dbe0c7b516289ed853565
+
+The parser under deployment/deepstream/parser/ is the public hardened variant.
+The DeepStream 6.0 EVENT_HOST_WAIT compatibility patch under
+deployment/deepstream/nvdsinfer/ modifies only nvdsinfer runtime completion
+semantics and is kept separate from detector and parser logic.

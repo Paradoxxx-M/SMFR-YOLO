@@ -1,0 +1,8 @@
+path: <CPPE_DATASET_ROOT>
+train: images/train
+val: images/val
+test: images/test
+names:
+  0: person
+  1: helmet
+  2: vest

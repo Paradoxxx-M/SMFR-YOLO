@@ -1,0 +1,13 @@
+protocol: zero_shot
+data: dataset.yaml
+endpoint: test
+imgsz: 640
+eval_batch: 32
+half: false
+workers: 4
+seed: 42
+conf: 0.001
+iou: 0.7
+max_det: 300
+augment: false
+plots: false

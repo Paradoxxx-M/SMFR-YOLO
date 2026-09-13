@@ -1,0 +1,20 @@
+--- a/nvdsinfer_context_impl.cpp
++++ b/nvdsinfer_context_impl.cpp
+@@ -1844,6 +1844,8 @@
+      * current batch. */
+     RETURN_CUDA_ERR(cudaEventRecord(*m_InferCompleteEvent, *m_InferStream),
+         "Failed to record cuda infer-complete-event ");
++    RETURN_CUDA_ERR(cudaEventSynchronize(*m_InferCompleteEvent),
++        "Failed to synchronize cuda infer-complete-event ");
+
+     assert(m_PostprocessStream && m_InferCompleteEvent);
+     /* Make future jobs on the postprocessing stream wait on the infer
+@@ -1924,6 +1926,8 @@
+      * current batch. */
+     RETURN_CUDA_ERR(cudaEventRecord(*m_InferCompleteEvent, *m_InferStream),
+         "Failed to record cuda infer-complete-event ");
++    RETURN_CUDA_ERR(cudaEventSynchronize(*m_InferCompleteEvent),
++        "Failed to synchronize cuda infer-complete-event ");
+
+     assert(m_PostprocessStream && m_InferCompleteEvent);
+     /* Make future jobs on the postprocessing stream wait on the infer

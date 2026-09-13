@@ -1,0 +1,46 @@
+--- a/ultralytics/nn/tasks.py
++++ b/ultralytics/nn/tasks.py
+@@ -53,7 +53,10 @@
+     PSA,
+     SCDown,
+     RepVGGDW,
+-    v10Detect
++    v10Detect,
++    SMIC2f,
++    BiFPNF,
++    DFLR
+ )
+ from ultralytics.utils import DEFAULT_CFG_DICT, DEFAULT_CFG_KEYS, LOGGER, colorstr, emojis, yaml_load
+ from ultralytics.utils.checks import check_requirements, check_suffix, check_yaml
+@@ -888,7 +891,8 @@
+             RepC3,
+             PSA,
+             SCDown,
+-            C2fCIB
++            C2fCIB,
++            SMIC2f
+         }:
+             c1, c2 = ch[f], args[0]
+             if c2 != nc:  # if c2 not equal to number of classes (i.e. for Classify() output)
+@@ -900,7 +904,7 @@
+                 )  # num heads
+ 
+             args = [c1, c2, *args[1:]]
+-            if m in (BottleneckCSP, C1, C2, C2f, C2fAttn, C3, C3TR, C3Ghost, C3x, RepC3, C2fCIB):
++            if m in (BottleneckCSP, C1, C2, C2f, C2fAttn, C3, C3TR, C3Ghost, C3x, RepC3, C2fCIB, SMIC2f):
+                 args.insert(2, n)  # number of repeats
+                 n = 1
+         elif m is AIFI:
+@@ -917,7 +921,11 @@
+             args = [ch[f]]
+         elif m is Concat:
+             c2 = sum(ch[x] for x in f)
+-        elif m in {Detect, WorldDetect, Segment, Pose, OBB, ImagePoolingAttn, v10Detect}:
++        elif m is BiFPNF:
++            c1_list = [ch[x] for x in f]
++            c2 = c1_list[0]
++            args = [c1_list, *args]
++        elif m in {Detect, WorldDetect, Segment, Pose, OBB, ImagePoolingAttn, v10Detect, DFLR}:
+             args.append([ch[x] for x in f])
+             if m is Segment:
+                 args[2] = make_divisible(min(args[2], max_channels) * width, 8)

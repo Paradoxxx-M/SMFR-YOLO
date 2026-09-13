@@ -1,0 +1,12 @@
+data: data/primary_benchmark/dataset.yaml
+split: test
+imgsz: 640
+batch: 32
+half: false
+workers: 4
+device: 0
+conf: 0.001
+iou: 0.7
+plots: false
+max_det: 300
+augment: false

@@ -1,0 +1,9 @@
+configuration	smic2f	bifpnf	dflr	params_m	gflops	map50_pct	map50_95_pct
+baseline	0	0	0	3.006	8.1	87.9	48.6
+smic2f	1	0	0	3.007	8.1	89.0	49.7
+bifpnf	0	1	0	1.992	7.1	90.2	49.7
+dflr	0	0	1	3.173	8.8	90.1	49.7
+smic2f_bifpnf	1	1	0	1.993	7.2	89.6	49.4
+smic2f_dflr	1	0	1	3.174	8.8	89.4	49.0
+bifpnf_dflr	0	1	1	2.159	7.8	89.2	50.0
+smfr_yolo	1	1	1	2.159	7.9	90.5	50.3

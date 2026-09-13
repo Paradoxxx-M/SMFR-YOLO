@@ -1,0 +1,22 @@
+--- a/ultralytics/nn/modules/__init__.py
++++ b/ultralytics/nn/modules/__init__.py
+@@ -67,6 +67,9 @@
+     SpatialAttention,
+ )
+ from .head import OBB, Classify, Detect, Pose, RTDETRDecoder, Segment, WorldDetect, v10Detect
++from .bifpnf import BiFPNF
++from .dflr import DFLR
++from .smic2f import SMIC2f
+ from .transformer import (
+     AIFI,
+     MLP,
+@@ -143,5 +146,8 @@
+     "C2fCIB",
+     "SCDown",
+     "RepVGGDW",
+-    "v10Detect"
++    "v10Detect",
++    "SMIC2f",
++    "BiFPNF",
++    "DFLR",
+ )

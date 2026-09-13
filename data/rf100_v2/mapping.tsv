@@ -1,0 +1,6 @@
+source_class	target_id	target_class	action	note
+person	0	person	keep	mapping followed by manual review and refinement
+helmet	1	helmet	keep	mapping followed by manual review and refinement
+vest	2	vest	keep	mapping followed by manual review and refinement
+no-helmet			exclude	not part of the paper taxonomy
+no-vest			exclude	not part of the paper taxonomy

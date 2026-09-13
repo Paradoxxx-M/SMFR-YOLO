@@ -1,0 +1,17 @@
+__pycache__/
+*.py[cod]
+*.pt
+*.pth
+*.onnx
+*.engine
+*.so
+*.o
+runs/
+wandb/
+.cache/
+.idea/
+.vscode/
+*.tmp
+*.log
+Thumbs.db
+*.lnk

@@ -1,0 +1,11 @@
+device: Jetson Nano B01
+precision: FP16
+batch: 1
+imgsz: 640
+onnx_opset: 12
+power_mode: MAXN
+jetson_clocks: true
+confidence_threshold: 0.25
+nms_iou_threshold: 0.45
+topk: 300
+intervals: [0, 2]

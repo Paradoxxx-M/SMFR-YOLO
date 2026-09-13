@@ -1,0 +1,2 @@
+metric	main_test	alpha	n	V8_mean	SMFR_mean	delta_mean	delta_std	t	df	p	ci95_low	ci95_high	cohen_dz	significant_at_0.05	shapiro_W_diagnostic	shapiro_p_diagnostic	wilcoxon_W_diagnostic	wilcoxon_p_diagnostic	total_test_images	valid_paired_images	excluded_no_gt_images
+per-image AP50	two-sided paired t-test	0.05	110	0.906604564814608	0.9209668461352436	0.014362281320635634	0.0681915760550743	2.2089660630259984	109	0.02926937649082135	0.0014759019725230135	0.027248660668748252	0.21061665020084108	YES	0.8016263049866525	7.144565790980519e-11	475.0	0.008419674639196273	110	110	0
